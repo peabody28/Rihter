@@ -31,8 +31,16 @@ namespace db
         
         static ORM()
         {
-            conn = GetDBConnection("localhost", 3306, "books", "root", "1234");
-            conn.Open();
+            try
+            {
+                conn = GetDBConnection("localhost", 3306, "books", "root", "12345678");
+                conn.Open();
+            }
+            catch(MySqlException o)
+            {
+                Console.WriteLine("Connection Error");
+            }
+            
         }
         
         public static List<Dictionary<string, string>> Read(string sql)
