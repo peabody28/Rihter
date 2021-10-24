@@ -36,7 +36,7 @@ namespace db
                 conn = GetDBConnection("localhost", 3306, "books", "root", "12345678");
                 conn.Open();
             }
-            catch(MySqlException o)
+            catch(MySqlException)
             {
                 Console.WriteLine("Connection Error");
             }
